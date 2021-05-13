@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_demo_navigation"
+    app:startDestination="@id/navigationFragment1">
+    <!--startDestination 初始目的地-->
+    <fragment
+        android:id="@+id/navigationFragment1"
+        android:name="com.haikun.jetpackapp.home.ui.demo.navigation.NavigationFragment1"
+        android:label="NavigationFragment1">
+        <action
+            android:id="@+id/action_navigationFragment1_to_navigationFragment2"
+            app:destination="@id/navigationFragment2" />
+
+        <action
+            android:id="@+id/action_navigationFragment1_to_navigationFragment22"
+            app:destination="@id/navigationFragment2"
+            app:enterAnim="@anim/anim_fragment_in"
+            app:popExitAnim="@anim/anim_fragment_out" />
+        <!--action 跳转动作-->
+        <!--enterAnim popExitAnim 指定动画-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationFragment2"
+        android:name="com.haikun.jetpackapp.home.ui.demo.navigation.NavigationFragment2"
+        android:label="NavigationFragment2">
+        <argument
+            android:name="testKey"
+            app:argType="string"
+            app:nullable="true" />
+        <!--argument 接收的参数-->
+        <action
+            android:id="@+id/action_navigationFragment2_to_navigationFragment3"
+            app:destination="@id/navigationFragment3"
+            app:enterAnim="@anim/anim_fragment_in"
+            app:popExitAnim="@anim/anim_fragment_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationFragment3"
+        android:name="com.haikun.jetpackapp.home.ui.demo.navigation.NavigationFragment3"
+        android:label="NavigationFragment3">
+        <action
+            android:id="@+id/action_navigationFragment3_to_navigationFragment1"
+            app:destination="@id/navigationFragment1"
+            app:popUpTo="@id/navigationFragment1"
+            app:popUpToInclusive="true" />
+        <!--app:popUpTo 会从堆栈中移除 2 和 3-->
+        <!--app:popUpToInclusive="true" 还会将第一个 1 从堆栈上弹出，从而有效地清除它-->
+    </fragment>
+</navigation>

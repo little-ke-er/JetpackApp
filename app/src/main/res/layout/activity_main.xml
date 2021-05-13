@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.haikun.jetpackapp.ui.MainViewModel" />
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:isVisible="@{viewModel.showBottom}"
+            android:id="@+id/navView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+        <fragment
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/navView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/app_navigation" />
+        <!--android:name="androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment"
+        这是navigation-dynamic-features-fragment中写好的fragment，就相当于是整个导航的起始-->
+
+        <!--设置app:defaultNavHost="true"，就会拦截系统的返回按钮，
+        这时切换fragment会默认进行入栈，即从homeFragment切换到mineFragment后，
+        再按返回键，不会直接finish MainActivity，而是切回到homeFragment
+        可以通过在Fragment里使用requireActivity().onBackPressedDispatcher.addCallback
+        进行自定义返回事件操作，注意要加LifecycleOwner,否则会影响其他的fragment
+        -->
+
+        <!--navGraph引用定义好的导航文件-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

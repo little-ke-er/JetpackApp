@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.haikun.jetpackapp.mine.ui.mine.MineViewModel" />
+
+        <variable
+            name="clickListener"
+            type="com.haikun.jetpackapp.mine.ui.mine.MineFragment.ClickListener" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="match_parent">
+
+        <Button
+            android:isVisible="@{viewModel.showLoginBtn}"
+            android:onClick="@{v->clickListener.toLogin()}"
+            android:text="@string/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:isVisible="@{!viewModel.showLoginBtn}"
+            android:onClick="@{v->clickListener.logout()}"
+            android:text="@string/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:isVisible="@{!viewModel.showLoginBtn}"
+            android:onClick="@{v->clickListener.showStar()}"
+            android:text="@string/show_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+</layout>

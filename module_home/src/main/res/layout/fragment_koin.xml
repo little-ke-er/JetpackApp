@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.haikun.jetpackapp.home.ui.demo.koin.KoinFragment" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@{data.wangYiBo.toString()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="@{data.xiaoZhan.toString()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="@{data.girl.toString()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="@{data.boy.toString()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:text="注入王一博"
+            android:onClick="@{v->data.addYiBo()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:text="注入饭圈女孩"
+            android:onClick="@{v->data.addGirl()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:text="打印一下viewModel的内容"
+            android:layout_width="wrap_content"
+            android:onClick="@{v->data.logViewModel()}"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:text="修改一下viewModel的内容"
+            android:layout_width="wrap_content"
+            android:onClick="@{v->data.modifyViewModel()}"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="@{data.fans.toString()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:text="跳转"
+            android:layout_width="wrap_content"
+            android:onClick="@{v->data.jump()}"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

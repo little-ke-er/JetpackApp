@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="com.haikun.jetpackapp.home.R" />
+
+        <variable
+            name="viewModel"
+            type="com.haikun.jetpackapp.home.ui.demo.databinding.DataBindingViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.userName}" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checkedButton="@={viewModel.sexCheckId}"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女" />
+        </RadioGroup>
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@={viewModel.love}"
+            android:visibility="@{viewModel.sexCheckId==R.id.rb1?View.VISIBLE:View.GONE}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="@{v->viewModel.save()}"
+            android:text="保存" />
+
+        <com.haikun.jetpackapp.home.ui.demo.databinding.view.MyButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            app:maxTimes="@{15}"
+            app:minTimes="@{8}"
+            app:clickTimes="@={viewModel.clickTimes}"
+            />
+
+        <Button
+            android:text="减少一次"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:onClick="@{v->viewModel.reduce()}"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

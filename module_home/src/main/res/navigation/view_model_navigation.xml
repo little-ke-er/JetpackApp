@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/view_model_navigation.xml"
+    app:startDestination="@id/viewModelFragment">
+
+    <fragment
+        android:id="@+id/viewModelFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.viewmodel.ViewModelFragment1"
+        android:label="ViewModelFragment" >
+        <action
+            android:id="@+id/action_viewModelFragment_to_viewModelFragment2"
+            app:destination="@id/viewModelFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewModelFragment2"
+        android:name="com.haikun.jetpackapp.home.ui.demo.viewmodel.ViewModelFragment2"
+        android:label="ViewModelFragment2" />
+
+
+</navigation>

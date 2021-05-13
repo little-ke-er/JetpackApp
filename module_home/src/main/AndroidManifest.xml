@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.haikun.jetpackapp.home">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_module_home">
+        <dist:delivery>
+            <dist:install-time />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+    <application>
+        <activity android:name="com.haikun.jetpackapp.home.ui.demo.viewmodel.ViewModelActivity" />
+        <activity android:name="com.haikun.jetpackapp.home.ui.demo.navigation.NavigationActivity" />
+    </application>
+</manifest>

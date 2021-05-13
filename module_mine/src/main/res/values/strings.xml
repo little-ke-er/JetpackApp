@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">去登录</string>
+    <string name="logout">退出登录</string>
+    <string name="show_list">查看列表</string>
+</resources>

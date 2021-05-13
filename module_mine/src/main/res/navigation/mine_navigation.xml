@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@+id/mine_fragment"
+    android:id="@id/navigation_mine">
+
+    <fragment android:id="@+id/mine_fragment"
+        android:label="@string/title_module_mine"
+        android:name="com.haikun.jetpackapp.mine.ui.mine.MineFragment">
+
+        <action
+            android:id="@+id/action_mine_fragment_to_starFragment"
+            app:destination="@id/starFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/starFragment"
+        android:name="com.haikun.jetpackapp.mine.ui.star.StarFragment"
+        android:label="StarFragment" />
+
+</navigation>

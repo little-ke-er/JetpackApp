@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.haikun.jetpackapp.home.ui.demo.datastore.bean";
+option java_multiple_files = true;
+
+message MessageEvent {
+  int32 type = 1;
+  string message = 2;
+}

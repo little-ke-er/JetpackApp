@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/navigation_home">
+    <!--startDestination 指定在在app中的开始-->
+
+    <include-dynamic
+        android:id="@+id/navigation_login"
+        app:moduleName="module_login"
+        app:graphResName="login_navigation" />
+
+    <include-dynamic
+        android:id="@+id/navigation_home"
+        app:moduleName="module_home"
+        app:graphResName="home_navigation" />
+
+    <!--moduleName 指定对应的dynamic future module-->
+    <!--graphResName 指定对应的navigation文件-->
+    <include-dynamic
+        android:id="@+id/navigation_mine"
+        app:moduleName="module_mine"
+        app:graphResName="mine_navigation" />
+
+    <!--把三个模块设为全局操作的入口-->
+    <action android:id="@+id/action_global_navigation_login" app:destination="@id/navigation_login"/>
+
+    <action android:id="@+id/action_global_navigation_home" app:destination="@id/navigation_home"/>
+
+    <action android:id="@+id/action_global_navigation_mine" app:destination="@id/navigation_mine"/>
+</navigation>

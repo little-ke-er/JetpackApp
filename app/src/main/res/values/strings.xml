@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JetpackApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_mine">Mine</string>
+    <string name="title_module_home">home</string>
+    <string name="title_module_mine">mine</string>
+    <string name="title_module_login">login</string>
+</resources>

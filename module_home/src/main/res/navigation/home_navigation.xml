@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@+id/home_fragment">
+    <!--android:id="@id/navigation_home"-->
+    <!--这个如果要设置id，必须要与app_navigation中的include-dynamic 设置的id一致，
+    并且这里不能是@+id，或者干脆这里不设置id-->
+
+    <fragment android:id="@+id/home_fragment"
+        android:label="@string/title_module_home"
+        android:name="com.haikun.jetpackapp.home.ui.home.HomeFragment">
+        <action
+            android:id="@+id/action_home_fragment_to_lifecycleFragment"
+            app:destination="@id/lifecycleFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_liveDataFragment"
+            app:destination="@id/liveDataFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_viewModelActivity"
+            app:destination="@id/viewModelActivity" />
+        <action
+            android:id="@+id/action_home_fragment_to_flowFragment"
+            app:destination="@id/flowFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_dataStoreFragment"
+            app:destination="@id/dataStoreFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_dataBindingFragment"
+            app:destination="@id/dataBindingFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_navigationActivity"
+            app:destination="@id/navigationActivity" />
+        <action
+            android:id="@+id/action_home_fragment_to_pagingFragment"
+            app:destination="@id/pagingFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_koinFragment"
+            app:destination="@id/koinFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_composeActivity"
+            app:destination="@id/composeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/lifecycleFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.lifecycle.LifecycleFragment"
+        android:label="LifecycleFragment" />
+    <fragment
+        android:id="@+id/liveDataFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.livedata.LiveDataFragment"
+        android:label="LiveDataFragment" />
+    <activity
+        android:id="@+id/viewModelActivity"
+        android:name="com.haikun.jetpackapp.home.ui.demo.viewmodel.ViewModelActivity"
+        android:label="ViewModelActivity" />
+    <fragment
+        android:id="@+id/flowFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.flow.FlowFragment"
+        android:label="FlowFragment" />
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.room.RoomFragment"
+        android:label="RoomFragment" />
+    <fragment
+        android:id="@+id/dataStoreFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.datastore.DataStoreFragment"
+        android:label="DataStoreFragment" />
+    <fragment
+        android:id="@+id/dataBindingFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.databinding.DataBindingFragment"
+        android:label="DataBindingFragment" />
+    <activity
+        android:id="@+id/navigationActivity"
+        android:name="com.haikun.jetpackapp.home.ui.demo.navigation.NavigationActivity"
+        android:label="NavigationActivity" />
+    <fragment
+        android:id="@+id/pagingFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.paging.PagingFragment"
+        android:label="PagingFragment" />
+    <fragment
+        android:id="@+id/koinFragment"
+        android:name="com.haikun.jetpackapp.home.ui.demo.koin.KoinFragment"
+        android:label="KoinFragment" >
+        <action
+            android:id="@+id/action_koinFragment_to_koinFragment1"
+            app:destination="@id/koinFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/koinFragment1"
+        android:name="com.haikun.jetpackapp.home.ui.demo.koin.KoinFragment1"
+        android:label="KoinFragment1" />
+    <activity
+        android:id="@+id/composeActivity"
+        android:name="com.haikun.jetpackapp.ui.compose.ComposeActivity"
+        android:label="ComposeActivity" />
+</navigation>
