@@ -47,12 +47,12 @@ interface EnvironmentDimensions {
 object DevEnvironmentDimensions : EnvironmentDimensions {
     override val dimensions: String = Environment.ENVIRONMENT_DIMENSIONS
     override val name: String = "dev"
-    override val baseUrl: String = "\"http://192.168.137.1:8081/test/\""
+    override val baseUrl: String = "\"http://haikun.vaiwan.com/test/\""
 }
 
 object MasterEnvironmentDimensions : EnvironmentDimensions {
     override val dimensions: String = Environment.ENVIRONMENT_DIMENSIONS
     override val name: String = "master"
-    override val baseUrl: String = "\"http://192.168.137.1:8080/test/\""
+    override val baseUrl: String = "\"http://haikun.vaiwan.com/test/\""
 }
 
