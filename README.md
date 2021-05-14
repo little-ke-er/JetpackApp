@@ -2,6 +2,7 @@
 
 作者：海坤
 
+项目地址： [https://github.com/haikun-li/JetpackApp](https://github.com/haikun-li/JetpackApp)
 
 ## 100% kotlin
 
@@ -1089,7 +1090,7 @@ Android App Bundle 是官方 2018
 支持，这导致在国内无法使用
 
 借着 navigation 组件支持 dynamic feature module 间导航的契机，我们可以使用
-dynamic feature module 来拆分功能模块以实现组件化
+dynamic feature module 来拆分功能模块以实现组件化,在开发阶段可以有需要的选择某个模块进行编译安装。
 * 传统APP依赖关系:
 
 ![传统APP依赖关系](image/img4.png)

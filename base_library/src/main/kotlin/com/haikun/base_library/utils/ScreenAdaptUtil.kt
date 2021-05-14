@@ -35,7 +35,7 @@ object ScreenAdaptUtil {
                 sScaledDensity = scaledDensity
                 application.unregisterComponentCallbacks(object : ComponentCallbacks {
                     override fun onConfigurationChanged(newConfig: Configuration) {
-                        if (newConfig?.fontScale > 0) {
+                        if (newConfig.fontScale > 0) {
                             sScaledDensity = application.resources.displayMetrics.scaledDensity
                         }
                     }
