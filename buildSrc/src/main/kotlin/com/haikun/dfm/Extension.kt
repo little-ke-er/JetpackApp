@@ -1,9 +1,8 @@
-
-import com.android.build.gradle.TestedExtension
-import com.android.build.gradle.internal.dsl.ProductFlavor
+package com.haikun.dfm
+import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.NamedDomainObjectContainer
 
-fun TestedExtension.setSrcDirs(){
+fun CommonExtension<*,*,*,*>.setSrcDirs(){
     sourceSets.getByName("main") {
         java.srcDirs("src/main/kotlin")
     }
@@ -20,7 +19,7 @@ object Environment{
     const val ENVIRONMENT_DIMENSIONS = "environment"
 }
 
-fun TestedExtension.addProductFlavors() {
+fun CommonExtension<*,*,*,*>.addProductFlavors() {
     flavorDimensions(Environment.ENVIRONMENT_DIMENSIONS)
     productFlavors {
         create(this, DevEnvironmentDimensions)
@@ -28,8 +27,9 @@ fun TestedExtension.addProductFlavors() {
     }
 }
 
+
 fun create(
-    namedDomainObjectContainer: NamedDomainObjectContainer<ProductFlavor>,
+    namedDomainObjectContainer: NamedDomainObjectContainer<out com.android.build.api.dsl.ProductFlavor>,
     dimensions: EnvironmentDimensions
 ) {
     namedDomainObjectContainer.create(dimensions.name) {

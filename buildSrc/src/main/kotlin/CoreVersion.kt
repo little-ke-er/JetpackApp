@@ -5,5 +5,5 @@ object CoreVersion {
     const val NAVIGATION = "2.3.2"
     const val COMPOSE = "1.0.0-beta04"
     const val COMPOSE_ACTIVITY = "1.3.0-alpha06"
-    const val ANDROID_GRADLE = "7.0.0-alpha14"
+    const val ANDROID_GRADLE = "7.0.0-alpha15"
 }

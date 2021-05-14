@@ -2,6 +2,12 @@ plugins {
     id(GradlePluginId.DFM)
 }
 
+
+android{
+    kotlinOptions{
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
 /*
 plugins {
     id(GradlePluginId.ANDROID_DYNAMIC_FEATURE)
@@ -46,16 +52,16 @@ android {
     dataBinding.isEnabled = true
 
     //差异化版本管理,可以配置不同环境下的URL地址或者其他变量
-    //addProductFlavors()
+    //com.haikun.dfm.addProductFlavors()
     flavorDimensions(ENVIRONMENT_DIMENSIONS)
     productFlavors{
-        create(DevEnvironmentDimensions.name){
-            buildConfigField("String", "BASE_URL", DevEnvironmentDimensions.baseUrl)
-            setDimension(DevEnvironmentDimensions.dimensions)
+        com.haikun.dfm.create(com.haikun.dfm.DevEnvironmentDimensions.name){
+            buildConfigField("String", "BASE_URL", com.haikun.dfm.DevEnvironmentDimensions.baseUrl)
+            setDimension(com.haikun.dfm.DevEnvironmentDimensions.dimensions)
         }
-        create(MasterEnvironmentDimensions.name){
-            buildConfigField("String", "BASE_URL", MasterEnvironmentDimensions.baseUrl)
-            setDimension(MasterEnvironmentDimensions.dimensions)
+        com.haikun.dfm.create(com.haikun.dfm.MasterEnvironmentDimensions.name){
+            buildConfigField("String", "BASE_URL", com.haikun.dfm.MasterEnvironmentDimensions.baseUrl)
+            setDimension(com.haikun.dfm.MasterEnvironmentDimensions.dimensions)
         }
     }
 

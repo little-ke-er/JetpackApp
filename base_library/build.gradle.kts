@@ -1,3 +1,5 @@
+import com.haikun.dfm.setSrcDirs
+
 plugins {
     id(GradlePluginId.ANDROID_LIBRARY)
     id(GradlePluginId.KOTLIN_ANDROID)
@@ -5,15 +7,12 @@ plugins {
     id(GradlePluginId.KOIN)
 }
 android {
-    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
-    buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
+    compileSdk=AndroidConfig.COMPILE_SDK_VERSION
+    buildToolsVersion=AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
-        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
-
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
+        minSdk=AndroidConfig.MIN_SDK_VERSION
+        targetSdk=AndroidConfig.TARGET_SDK_VERSION
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 

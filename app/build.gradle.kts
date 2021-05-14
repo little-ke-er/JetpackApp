@@ -1,3 +1,7 @@
+import ModuleDependency.getDynamicFeatureModules
+import com.haikun.dfm.addProductFlavors
+import com.haikun.dfm.setSrcDirs
+
 plugins {
 
     id(GradlePluginId.ANDROID_APPLICATION)
@@ -8,15 +12,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
-    buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
-
+    compileSdk = AndroidConfig.COMPILE_SDK_VERSION
+    buildToolsVersion = AndroidConfig.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId = AndroidConfig.ID
         multiDexEnabled = true
-        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
-        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+        minSdk = AndroidConfig.MIN_SDK_VERSION
+        targetSdk = AndroidConfig.TARGET_SDK_VERSION
         versionCode = AndroidConfig.VERSION_CODE
         versionName = AndroidConfig.VERSION_NAME
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
@@ -62,7 +65,7 @@ android {
     //开启dataBinding
     buildFeatures {
         dataBinding = true
-        compose=true
+        compose = true
     }
 
 
@@ -82,7 +85,7 @@ android {
         kotlinCompilerVersion = CoreVersion.KOTLIN
     }
 
-    setDynamicFeatures(ModuleDependency.getDynamicFeatureModules().toMutableSet())
+    dynamicFeatures.addAll(getDynamicFeatureModules().toMutableSet())
 
 }
 
