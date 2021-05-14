@@ -3,7 +3,7 @@
 作者：海坤
 
 项目地址： [https://github.com/haikun-li/JetpackApp](https://github.com/haikun-li/JetpackApp)
-
+(由于项目引入了jetpack compose，请使用最新的canary版本的Android studio打开项目)
 ## 100% kotlin
 
 ### 为什么使用kotlin
